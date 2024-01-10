@@ -46,12 +46,14 @@ container.addEventListener("click", function (e) {
         element.remove();
     }
     if (e.target.classList.contains("book-read")) {
-        element = document.getElementById(`${e.target.id}`);
-        if (e.target.id === "book-is-read") {
-            element.id = "book-not-read";
+        idBook = e.target.id;
+        const element = document.getElementById(`${idBook}`).getElementsByClassName(`book-read`)[0];
+        console.log(element);
+        if (element.classList.contains("book-is-read")) {
+            element.classList.replace("book-is-read", "book-not-read");
             element.textContent = "Not Read";
         } else {
-            element.id = "book-is-read";
+            element.classList.replace("book-not-read", "book-is-read");
             element.textContent = "Read";
         }
     }
@@ -75,7 +77,7 @@ function displayBooks () {
                                 <div>${book["author"]}</div>
                                 <div class="big-text">Pages</div>
                                 <div>${book["pages"]}</div>
-                                <button class="book-read" id=${id}>${isRead}</button>
+                                <button class="book-read ${id}" id="${bookPlacement}">${isRead}</button>
                                 <button class="remove-book" id=${bookPlacement}>Remove</button>
                             </div>`;
 }

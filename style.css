@@ -58,11 +58,11 @@ html {
     grid-area: 5 / 1 / 6 / 3;
 }
 
-#book-is-read {
+.book-is-read {
     background-color: rgb(159, 255, 156);
 }
 
-#book-not-read {
+.book-not-read {
     background-color: rgb(255, 156, 156);
 }
 
