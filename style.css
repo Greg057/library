@@ -49,12 +49,13 @@ html {
 .book-card button {
     border: none;
     font-weight: 700;
-    border-radius: 12px;
+    border-radius: 8px;
     font-size: 1rem;
 }
 
-#remove-book {
+.remove-book {
     background-color: rgb(226, 225, 225);
+    grid-area: 5 / 1 / 6 / 3;
 }
 
 #book-is-read {
@@ -73,9 +74,6 @@ html {
     grid-area: 4 / 1 / 5 / 3;
 }
 
-#remove-book {
-    grid-area: 5 / 1 / 6 / 3;
-}
 
 dialog {
     
