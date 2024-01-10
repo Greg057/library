@@ -1,9 +1,23 @@
+const addBookBtn = document.querySelector("#add-book");
+const dialog = document.querySelector("dialog");
+const closeDialogBtn = document.querySelector("#close");
+
+addBookBtn.addEventListener("click", function () {
+    dialog.showModal();
+});
+
+closeDialogBtn.addEventListener("click", function () {
+    dialog.close();
+})
+
+const myLibrary = [];
+
 function Book(title, author, pages, isRead) {
     this.title = title;
     this.author = author; 
     this.pages = pages;
     this.info = function () {
-        if(isRead === "yes") {
+        if(isRead === true) {
             this.isRead = "already read";
         }
         else {
@@ -11,11 +25,14 @@ function Book(title, author, pages, isRead) {
         }
         return(`${this.title} by ${this.author}, ${this.pages} pages, ${this.isRead}.`);
     }
- }
+}
 
 
- const theHobbit = new Book("The Hobbit", "JRR Tolkien", 295, "yes");
- console.log(theHobbit.info());
+function addBookToLibrary() {
+    // do stuff here
+}
 
- console.log(Object.getPrototypeOf(theHobbit));
- console.log(Object.getPrototypeOf(theHobbit) === Book.prototype); 
+
+const theHobbit = new Book("The Hobbit", "JRR Tolkien", 295, true);
+const dailyHabits = new Book("Daily Habits", "John Smith", 400, false);
+

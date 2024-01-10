@@ -1,0 +1,19 @@
+
+.list-books {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    align-items: center;
+}
+
+.book-card {
+    width: 300px;
+    height: 150px;
+    background-color: grey;
+}
+
+dialog {
+    height: 200px;
+    width: 100px;
+    background-color: green;
+}
