@@ -1,6 +1,13 @@
 const addBookBtn = document.querySelector("#add-book");
 const dialog = document.querySelector("dialog");
 const closeDialogBtn = document.querySelector("#close");
+const submitBtn = document.querySelector("#submit-button");
+const titleForm = document.querySelector("#title");
+const authorForm = document.querySelector("#author");
+const pagesForm = document.querySelector("#pages");
+const isReadForm = document.querySelector("#isRead");
+
+const myLibrary = [];
 
 addBookBtn.addEventListener("click", function () {
     dialog.showModal();
@@ -10,21 +17,20 @@ closeDialogBtn.addEventListener("click", function () {
     dialog.close();
 })
 
-const myLibrary = [];
+submitBtn.addEventListener("click", function (event) {
+    event.preventDefault();
+    myLibrary.push(new Book(titleForm.value.toString(), authorForm.value.toString(), pagesForm.value, isReadForm.checked));
+    dialog.close();
+})
+
+
+
 
 function Book(title, author, pages, isRead) {
     this.title = title;
     this.author = author; 
     this.pages = pages;
-    this.info = function () {
-        if(isRead === true) {
-            this.isRead = "already read";
-        }
-        else {
-            this.isRead = "not read yet";
-        }
-        return(`${this.title} by ${this.author}, ${this.pages} pages, ${this.isRead}.`);
-    }
+    this.isRead = isRead;
 }
 
 
